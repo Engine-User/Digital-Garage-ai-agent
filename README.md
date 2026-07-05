@@ -30,7 +30,7 @@ Digital Garage is a platform where users can **create AI agents**, **control how
 
 ## Features
 
-- **Chat** — Multi-turn chat with any local model or API (vLLM, llama.cpp, Ollama, OpenRouter, OpenAI)
+- **Chat** — Multi-turn chat with any local model or API (Huggingface, vLLM, llama.cpp, Ollama, OpenRouter, OpenAI)
 - **Agent Mode** — Autonomous agents that plan, call tools, and work through tasks end-to-end. Built on [opencode](https://github.com/anomalyco/opencode) with MCP, web, files, shell, skills, and memory tools
   <img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/523816a6-8ac0-4b5f-afa1-a8301d27bf1d" />
 - **DYOM (Deploy Your Own Models)** — Hardware-aware model recommendations, one-click download and serving. Built on [llmfit](https://github.com/AlexsJones/llmfit). VRAM-aware scoring across 270+ models

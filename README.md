@@ -30,7 +30,7 @@ Digital Garage is a platform where users can **create AI agents**, **control how
 
 - **Chat** — Multi-turn chat with any local model or API (vLLM, llama.cpp, Ollama, OpenRouter, OpenAI)
 - **Agent Mode** — Autonomous agents that plan, call tools, and work through tasks end-to-end. Built on [opencode](https://github.com/anomalyco/opencode) with MCP, web, files, shell, skills, and memory tools
-- <img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/523816a6-8ac0-4b5f-afa1-a8301d27bf1d" />
+  <img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/523816a6-8ac0-4b5f-afa1-a8301d27bf1d" />
 - **DYOM (Deploy Your Own Models)** — Hardware-aware model recommendations, one-click download and serving. Built on [llmfit](https://github.com/AlexsJones/llmfit). VRAM-aware scoring across 270+ models
 - **Deep Research** — Multi-step research runs that gather, read, and synthesize sources into a visual report. Adapted from [Tongyi DeepResearch](https://github.com/Alibaba-NLP/DeepResearch)
 - **Compare** — Blind multi-model comparison. Send one prompt to several models, compare answers side-by-side
@@ -42,9 +42,9 @@ Digital Garage is a platform where users can **create AI agents**, **control how
 - **Mobile** — Responsive PWA with touch gestures
 - **Edit Files** — Directly Chat about them with AI
 <img width="940" height="479" alt="image" src="https://github.com/user-attachments/assets/0af9a530-5557-428c-b2cb-fb3a666bf303" />
-- **Configure/Modify Tools** — Give more power to your AI
+Configure/Modify Tools — Give more power to your AI
 <img width="940" height="319" alt="image" src="https://github.com/user-attachments/assets/7d6cfea8-461a-4fea-b809-7ae2f37a5462" />
-- **Create: To-Do lists, Notes, Docs, pdfs** – Set Reminders and trigger workflows through Email & Mobile applications
+Create: To-Do lists, Notes, Docs, pdfs – Set Reminders and trigger workflows through Email & Mobile applications
 <img width="940" height="318" alt="image" src="https://github.com/user-attachments/assets/5ce2438b-c886-4a9e-b4d5-73fc19ecf800" />
 
 ---

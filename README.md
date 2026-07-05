@@ -1,4 +1,3 @@
-<div align="center">
 Digital Garage — AI Agents Orchestration Platform
 <img width="1914" height="648" alt="image" src="https://github.com/user-attachments/assets/d49a557b-1e31-42eb-9aed-961f07503d85" />
 <div align="center">
@@ -31,6 +30,7 @@ Digital Garage is a platform where users can **create AI agents**, **control how
 
 - **Chat** — Multi-turn chat with any local model or API (vLLM, llama.cpp, Ollama, OpenRouter, OpenAI)
 - **Agent Mode** — Autonomous agents that plan, call tools, and work through tasks end-to-end. Built on [opencode](https://github.com/anomalyco/opencode) with MCP, web, files, shell, skills, and memory tools
+<img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/523816a6-8ac0-4b5f-afa1-a8301d27bf1d" />
 - **DYOM (Deploy Your Own Models)** — Hardware-aware model recommendations, one-click download and serving. Built on [llmfit](https://github.com/AlexsJones/llmfit). VRAM-aware scoring across 270+ models
 - **Deep Research** — Multi-step research runs that gather, read, and synthesize sources into a visual report. Adapted from [Tongyi DeepResearch](https://github.com/Alibaba-NLP/DeepResearch)
 - **Compare** — Blind multi-model comparison. Send one prompt to several models, compare answers side-by-side
@@ -40,6 +40,12 @@ Digital Garage is a platform where users can **create AI agents**, **control how
 - **Notes & Tasks** — Quick notes with reminders, todo lists, and scheduled tasks the agent can act on
 - **Calendar** — Local-first calendar with CalDAV sync (Radicale, Nextcloud, Apple, Fastmail)
 - **Mobile** — Responsive PWA with touch gestures
+- **Edit Files** — Directly Chat about them with AI
+<img width="940" height="479" alt="image" src="https://github.com/user-attachments/assets/0af9a530-5557-428c-b2cb-fb3a666bf303" />
+- **Configure/Modify Tools** — Give more power to your AI
+<img width="940" height="319" alt="image" src="https://github.com/user-attachments/assets/7d6cfea8-461a-4fea-b809-7ae2f37a5462" />
+- **Create: To-Do lists, Notes, Docs, pdfs** – Set Reminders and trigger workflows through Email & Mobile applications
+<img width="940" height="318" alt="image" src="https://github.com/user-attachments/assets/5ce2438b-c886-4a9e-b4d5-73fc19ecf800" />
 
 ---
 
@@ -131,6 +137,7 @@ All agent conversations are stored in SQLite (`data/app.db`):
 
 ### 1. Research Agent Workflow
 A multi-step research pipeline: gather sources → read & extract → synthesize into a visual report.
+<img width="940" height="328" alt="image" src="https://github.com/user-attachments/assets/9bc4ff77-bcd9-4982-b645-7012faf090d8" />
 
 ```
 [User Query] → Web Search → Source Collection → Content Extraction → LLM Synthesis → Visual Report
@@ -138,6 +145,7 @@ A multi-step research pipeline: gather sources → read & extract → synthesize
 
 ### 2. Email Triage Workflow
 Autonomous email processing: monitor inbox → classify urgency → summarize → draft replies → await approval.
+<img width="940" height="311" alt="image" src="https://github.com/user-attachments/assets/0546188f-1e65-4ca3-8e5e-b6ad2f967396" />
 
 ```
 [IMAP Poll] → Urgency Classification → Auto-Tag → Summary Generation → Reply Draft → Human Approval

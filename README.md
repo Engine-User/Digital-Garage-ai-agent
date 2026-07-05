@@ -1,4 +1,6 @@
-Digital Garage — AI Agents Orchestration Platform
+<div align="center">
+  Digital Garage — AI Agents Orchestration Platform
+</div>
 <img width="1914" height="648" alt="image" src="https://github.com/user-attachments/assets/d49a557b-1e31-42eb-9aed-961f07503d85" />
 <div align="center">
 

@@ -1,5 +1,5 @@
 <div align="center">
-Digital Garage — Agentic Orchestration Platform
+Digital Garage — AI Agents Orchestration Platform
 
 <div align="center">
 

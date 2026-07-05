@@ -1,2 +1,0 @@
-{"timestamp":"2026-06-02T17:06:43.656Z","filePath":"C:/Users/archi/Desktop/P1/Digital-Garage-main/core/__init__.py","rule":"W291","tool":"ruff","message":"Trailing whitespace","line":4,"column":27,"fixable":true,"autoFixed":false}
-{"timestamp":"2026-06-02T17:06:43.656Z","filePath":"C:/Users/archi/Desktop/P1/Digital-Garage-main/core/__init__.py","rule":"I001","tool":"ruff","message":"Import block is un-sorted or un-formatted","line":9,"column":1,"fixable":true,"autoFixed":false}

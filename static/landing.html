@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Digital Garage — Build & Control AI Agents." />
+  <title>Digital Garage — Agentic Orchestration</title>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e06c75'%3E%3Cpath d='M19.9,12.66a1,1,0,0,1,0-1.32L21.18,9.9a1,1,0,0,0,.12-1.17l-2-3.46a1,1,0,0,0-1.07-.48l-1.88.38a1,1,0,0,1-1.15-.66l-.61-1.83A1,1,0,0,0,13.64,2h-4a1,1,0,0,0-1,.68L8.08,4.51a1,1,0,0,1-1.15.66L5,4.79A1,1,0,0,0,4,5.27L2,8.73A1,1,0,0,0,2.1,9.9l1.27,1.44a1,1,0,0,1,0,1.32L2.1,14.1A1,1,0,0,0,2,15.27l2,3.46a1,1,0,0,0,1.07.48l1.88-.38a1,1,0,0,1,1.15.66l.61,1.83a1,1,0,0,0,1,.68h4a1,1,0,0,0,.95-.68l.61-1.83a1,1,0,0,1,1.15-.66l1.88.38a1,1,0,0,0,1.07-.48l2-3.46a1,1,0,0,0-.12-1.17ZM18.41,14l.8.9-1.28,2.22-1.18-.24a3,3,0,0,0-3.45,2L12.92,20H10.36L10,18.86a3,3,0,0,0-3.45-2l-1.18.24L4.07,14.89l.8-.9a3,3,0,0,0,0-4l-.8-.9L5.35,6.89l1.18.24a3,3,0,0,0,3.45-2L10.36,4h2.56l.38,1.14a3,3,0,0,0,3.45,2l1.18-.24,1.28,2.22-.8.9A3,3,0,0,0,18.41,14ZM11.64,8a4,4,0,1,0,4,4A4,4,0,0,0,11.64,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,11.64,14Z'/%3E%3C/svg%3E" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #282424;
+      --highlight: #4a4a4a;
+    }
+
+    body {
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      margin-bottom: 60px;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .brand svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .hero-logo {
+      margin-bottom: 32px;
+    }
+
+    .hero-logo svg {
+      width: 80px;
+      height: 80px;
+      fill: var(--text);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
+      border-color: var(--highlight);
+    }
+
+    section {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .feature {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .feature h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .code-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      font-family: "Monaco", "Menlo", monospace;
+      font-size: 14px;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .code-block .prompt {
+      color: var(--muted);
+      user-select: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-group {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19.9,12.66a1,1,0,0,1,0-1.32L21.18,9.9a1,1,0,0,0,.12-1.17l-2-3.46a1,1,0,0,0-1.07-.48l-1.88.38a1,1,0,0,1-1.15-.66l-.61-1.83A1,1,0,0,0,13.64,2h-4a1,1,0,0,0-1,.68L8.08,4.51a1,1,0,0,1-1.15.66L5,4.79A1,1,0,0,0,4,5.27L2,8.73A1,1,0,0,0,2.1,9.9l1.27,1.44a1,1,0,0,1,0,1.32L2.1,14.1A1,1,0,0,0,2,15.27l2,3.46a1,1,0,0,0,1.07.48l1.88-.38a1,1,0,0,1,1.15.66l.61,1.83a1,1,0,0,0,1,.68h4a1,1,0,0,0,.95-.68l.61-1.83a1,1,0,0,1,1.15-.66l1.88.38a1,1,0,0,0,1.07-.48l2-3.46a1,1,0,0,0-.12-1.17ZM18.41,14l.8.9-1.28,2.22-1.18-.24a3,3,0,0,0-3.45,2L12.92,20H10.36L10,18.86a3,3,0,0,0-3.45-2l-1.18.24L4.07,14.89l.8-.9a3,3,0,0,0,0-4l-.8-.9L5.35,6.89l1.18.24a3,3,0,0,0,3.45-2L10.36,4h2.56l.38,1.14a3,3,0,0,0,3.45,2l1.18-.24,1.28,2.22-.8.9A3,3,0,0,0,18.41,14ZM11.64,8a4,4,0,1,0,4,4A4,4,0,0,0,11.64,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,11.64,14Z">
+          </path>
+        </svg>
+        Digital Garage
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#start">Get Started</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19.9,12.66a1,1,0,0,1,0-1.32L21.18,9.9a1,1,0,0,0,.12-1.17l-2-3.46a1,1,0,0,0-1.07-.48l-1.88.38a1,1,0,0,1-1.15-.66l-.61-1.83A1,1,0,0,0,13.64,2h-4a1,1,0,0,0-1,.68L8.08,4.51a1,1,0,0,1-1.15.66L5,4.79A1,1,0,0,0,4,5.27L2,8.73A1,1,0,0,0,2.1,9.9l1.27,1.44a1,1,0,0,1,0,1.32L2.1,14.1A1,1,0,0,0,2,15.27l2,3.46a1,1,0,0,0,1.07.48l1.88-.38a1,1,0,0,1,1.15.66l.61,1.83a1,1,0,0,0,1,.68h4a1,1,0,0,0,.95-.68l.61-1.83a1,1,0,0,1,1.15-.66l1.88.38a1,1,0,0,0,1.07-.48l2-3.46a1,1,0,0,0-.12-1.17ZM18.41,14l.8.9-1.28,2.22-1.18-.24a3,3,0,0,0-3.45,2L12.92,20H10.36L10,18.86a3,3,0,0,0-3.45-2l-1.18.24L4.07,14.89l.8-.9a3,3,0,0,0,0-4l-.8-.9L5.35,6.89l1.18.24a3,3,0,0,0,3.45-2L10.36,4h2.56l.38,1.14a3,3,0,0,0,3.45,2l1.18-.24,1.28,2.22-.8.9A3,3,0,0,0,18.41,14ZM11.64,8a4,4,0,1,0,4,4A4,4,0,0,0,11.64,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,11.64,14Z">
+          </path>
+        </svg>
+      </div>
+      <h1>Digital Garage - Manage AI Workflows</h1>
+      <p>
+        Build AI agents, control their behaviour, connect them into
+        collaborative workflows — all self-hosted.
+      </p>
+      <div class="cta-group">
+        <a href="#start" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/" target="_blank" class="btn btn-secondary">View on GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="features">
+    <div class="container">
+      <h2>What you can do</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Create Agents</h3>
+          <p>
+            Define agents with custom names, roles, system prompts, and
+            models. Configure their personality and capabilities.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Configure Behaviour</h3>
+          <p>
+            Set schedules (Cron Jobs), memory scope, skills, interaction rules, and
+            guardrails. Control how agents operate autonomously.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Orchestrate Workflows</h3>
+          <p>
+            Connect agents into collaborative workflows with conditions and
+            feedback loops. Use pre-built templates or build your own.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Real Runtime</h3>
+          <p>
+            Agents run on actual infrastructure, execute real tools, and
+            communicate asynchronously to complete tasks.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Email Integration</h3>
+          <p>
+            Connect agents to email accounts (IMAP/SMTP). They can receive,
+            process, and respond to messages autonomously.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Web UI</h3>
+          <p>
+            Manage everything visually — agent creation, workflow design,
+            monitoring, logs, and message history.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture">
+    <div class="container">
+      <h2>Architecture</h2>
+      <p style="color: var(--muted); margin-bottom: 24px">
+        Clear separation between UI, runtime, and persistence layers.
+      </p>
+      <div class="code-block">
+        <pre>
+┌─────────────────────────────────────┐
+│         Web UI (static/)            │
+└──────────────┬──────────────────────┘
+               │ REST / WebSocket
+┌──────────────▼──────────────────────┐
+│        FastAPI (app.py)             │
+│  Auth · Middleware · Rate Limits    │
+├──────────┬──────────┬───────────────┤
+│ routes/  │   src/   │   services/   │
+│ API      │ Agent    │ Memory,       │
+│ handlers │ loop &   │ Search, DYOM, │
+│          │ tools    │ Shell         │
+└──────────┴──────────┴───────────────┘
+         │              │
+    ┌────▼────┐    ┌────▼────┐
+    │ SQLite  │    │ChromaDB │
+    │ (data/) │    │(vectors)│
+    └─────────┘    └─────────┘</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="start">
+    <div class="container">
+      <h2>Get Started</h2>
+      <p style="color: var(--muted); margin-bottom: 24px">
+        Try these below options to run Digital Garage locally.
+      </p>
+
+      <h3 style="margin-top: 32px; margin-bottom: 12px">
+        Option 1: Docker (recommended)
+      </h3>
+      <div class="code-block">
+        <pre><span class="prompt">$</span> git clone &lt;repo-url&gt;
+<span class="prompt">$</span> cd digital_garage
+<span class="prompt">$</span> cp .env.example .env
+<span class="prompt">$</span> docker compose up -d --build</pre>
+      </div>
+
+      <h3 style="margin-top: 32px; margin-bottom: 12px">
+        Option 2: Manual install
+      </h3>
+      <div class="code-block">
+        <pre><span class="prompt">$</span> git clone &lt;repo-url&gt; && cd digital_garage
+<span class="prompt">$</span> python3 -m venv venv && source venv/bin/activate
+<span class="prompt">$</span> pip install -r requirements.txt
+<span class="prompt">$</span> python setup.py
+<span class="prompt">$</span> uvicorn app:app --host 0.0.0.0 --port 7000</pre>
+      </div>
+
+      <h3 style="margin-top: 32px; margin-bottom: 12px">
+        Test with Uvicorn
+      </h3>
+      <div class="code-block">
+        <pre><span class="prompt">$</span> uvicorn app:app --host 0.0.0.0 --port 7000 --reload</pre>
+      </div>
+
+      <p style="margin-top: 32px; color: var(--muted)">
+        Opens at
+        <code style="
+              background: var(--surface);
+              padding: 2px 8px;
+              border-radius: 4px;
+            ">http://localhost:7000</code>
+      </p>
+    </div>
+  </section>

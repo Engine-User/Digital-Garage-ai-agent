@@ -1,0 +1,4 @@
+# Digital Garage@2026
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

@@ -1,0 +1,10 @@
+# Digital Garage@2026
+use_default_settings: true
+
+server:
+  secret_key: "2e51d7983cae2d7cedeaf7740a8347e87b8f9c876345586acc9d34c46e2c2ee0"
+
+search:
+  formats:
+    - html
+    - json

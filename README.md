@@ -1,4 +1,5 @@
-Digital Garage — Agentic Orchestration Platform
+<div align="center">
+**Digital Garage — Agentic Orchestration Platform
 
 <div align="center">
 

@@ -1,5 +1,5 @@
 # Digital Garage@2026
-#!/usr/bin/env python3
+
 """digital_garage — first-time setup script.
 
 Creates data directories, initializes the database, and sets up an
